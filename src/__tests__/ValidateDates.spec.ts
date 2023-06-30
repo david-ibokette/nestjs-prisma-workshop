@@ -6,9 +6,6 @@ import {
   ValidationArguments,
 } from 'class-validator';
 
-import { ConfigService } from '@nestjs/config';
-import { Test, TestingModule } from '@nestjs/testing';
-
 export function BetweenMonths(
   min: number,
   max: number,
@@ -117,12 +114,6 @@ class SmartDates {
 }
 
 describe('Validate Dates', () => {
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [ConfigService],
-    }).compile();
-  });
-
   describe('Just Months', () => {
     it('In nine months is good', async () => {
       const eff = new Date();
