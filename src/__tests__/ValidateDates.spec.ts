@@ -5,6 +5,7 @@ import {
   registerDecorator,
   ValidationArguments,
 } from 'class-validator';
+import { faker } from '@faker-js/faker';
 
 export function BetweenMonths(
   min: number,
@@ -157,6 +158,15 @@ describe('Validate Dates', () => {
 
       const errors = await validate(dates);
       expect(errors?.length).toBeTruthy();
+    });
+
+    it('remove', async () => {
+      const x = faker.string.uuid();
+      console.log(x);
+      const inFiveYears = new Date();
+      inFiveYears.setFullYear(inFiveYears.getFullYear() + 5);
+      const d = faker.date.future({ refDate: inFiveYears });
+      console.log(d);
     });
   });
 

@@ -30,3 +30,30 @@ npm install
 ```bash
 npm i -g @nestjs/cli
 ```
+
+## NestJS REPL
+[REPL Documenation](https://docs.nestjs.com/recipes/repl)
+```bash
+# Run REPL
+$ npm run start -- --entryFile repl
+
+# Run REPL in watch mode
+$ npm run start -- --watch --entryFile repl
+```
+
+### Notes
+
+#### Using faker
+
+```javascript
+> const {faker} = require('@faker-js/faker')
+> faker.string.uuid()
+'213eaa3d-f74d-4a3b-af36-21c6fe4dc43b'
+```
+
+#### Multiline
+.editor
+
+#### output of last command
+
+_ (i.e., the underscore variable)
